@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased dark:bg-wa-surfaceDark dark:text-gray-100;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 120, 0.4) transparent;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition focus:border-wa-green focus:ring-2 focus:ring-wa-green/30 dark:border-gray-600 dark:bg-wa-recvDark dark:text-gray-100;
+  }
+
+  .btn-primary {
+    @apply w-full rounded-lg bg-wa-green px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}
+
+/* Blurred nature-style gradient behind the centered card (CSS only, no image). */
+.app-bg {
+  background:
+    radial-gradient(60rem 40rem at 15% 10%, rgba(37, 211, 102, 0.55), transparent 60%),
+    radial-gradient(50rem 40rem at 85% 20%, rgba(7, 94, 84, 0.7), transparent 60%),
+    radial-gradient(60rem 45rem at 50% 100%, rgba(56, 189, 148, 0.5), transparent 60%),
+    linear-gradient(160deg, #a8e6cf 0%, #56c596 40%, #1b6f5c 100%);
+  filter: blur(24px);
+  transform: scale(1.1);
+}
+
+.dark .app-bg {
+  background:
+    radial-gradient(60rem 40rem at 15% 10%, rgba(37, 211, 102, 0.25), transparent 60%),
+    radial-gradient(50rem 40rem at 85% 20%, rgba(7, 94, 84, 0.55), transparent 60%),
+    radial-gradient(60rem 45rem at 50% 100%, rgba(20, 90, 70, 0.5), transparent 60%),
+    linear-gradient(160deg, #0b1f1a 0%, #0f2f27 45%, #06130f 100%);
+}
+
+/* Subtle dotted pattern for the chat area. */
+.chat-bg {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.dark .chat-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}

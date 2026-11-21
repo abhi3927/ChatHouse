@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#075E54" />
+    <meta name="description" content="ChatHouse App - real-time chat" />
+    <title>ChatHouse App</title>
+    <script>
+      // Apply the saved theme before React renders to avoid a light/dark flash.
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {
+        // localStorage can be unavailable (private mode); fall back to light.
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
